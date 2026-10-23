@@ -1,0 +1,29 @@
+#Binary search algorithm
+n = input("Enter the number of values: ")
+n = int(n)
+values = []
+#Enter values in order of increasing size
+for i in range(1,n+1):
+    value = input(" Enter the value number "+str(i)+":  ")
+    value = int(value)
+    values.append(value)
+
+print(" Your sequence is: "+str(values)+".")
+x = input("Enter the value of x: ")
+x = int(x)
+
+i = 0
+j = n -1
+import math
+while i < j:
+	m = math.floor((i + j)/2)
+	if x > values[m]:
+		i = m + 1
+	else:
+		j = m
+		
+if x == values[i]:
+	location = i + 1
+	print(" The location of x is "+str(location)+".")
+else:
+    print(" The value x does not exist in the sequence.")
